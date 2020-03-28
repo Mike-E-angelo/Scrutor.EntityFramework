@@ -10,7 +10,7 @@ namespace Scrutor.EntityFramework
 		public void Test1()
 		{
 			Host.CreateDefaultBuilder()
-			    .ConfigureServices(x => x.AddScoped<ApplicationStorage, ApplicationStorage>()
+			    .ConfigureServices(x => x.AddSingleton<ApplicationStorage, ApplicationStorage>()
 			                             .Decorate<ApplicationStorage>(storage => storage))
 			    .Build()
 			    .Services.GetService<ApplicationStorage>();
